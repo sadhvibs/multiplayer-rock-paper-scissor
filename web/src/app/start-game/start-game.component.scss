@@ -1,0 +1,121 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    background-image: radial-gradient(circle, #1f1f1f 10%, transparent 10%),
+        radial-gradient(circle, #1f1f1f 10%, transparent 10%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+
+.game-form {
+    width: 100%;
+    max-width: 400px;
+}
+
+.game-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #BB86FC;
+    text-shadow: 0 0 10px rgba(187, 134, 252, 0.3);
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.form-container {
+    background-color: #1E1E1E;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333333;
+    text-align: center;
+}
+
+.setup-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #03DAC6;
+    letter-spacing: 1px;
+}
+
+.rounds-container {
+    margin-bottom: 30px;
+}
+
+.rounds-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #EEEEEE;
+    letter-spacing: 0.5px;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    color: #BB86FC;
+    pointer-events: none;
+    font-size: 12px;
+}
+
+.rounds-select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #333333;
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    font-size: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rounds-select:focus {
+    outline: none;
+    border-color: #BB86FC;
+    box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.3);
+}
+
+.rounds-select option {
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+.start-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #BB86FC;
+    color: #121212;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.start-btn:hover {
+    background-color: #A370DB;
+    box-shadow: 0 4px 12px rgba(187, 134, 252, 0.5);
+    transform: translateY(-2px);
+}
+
+.start-btn:active {
+    transform: translateY(0);
+}

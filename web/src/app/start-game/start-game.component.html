@@ -1,1 +1,22 @@
-<p>start-game works!</p>
+<div class="main-container">
+    <div class="game-form">
+        <h1 class="game-title">ROCK PAPER SCISSORS</h1>
+        <div class="form-container">
+            <h2 class="setup-title">TOURNAMENT SETUP</h2>
+            
+            <div class="rounds-container">
+                <label for="rounds" class="rounds-label">SELECT ROUNDS:</label>
+                <div class="select-wrapper">
+                    <select id="rounds" [(ngModel)]="selectedRounds" class="rounds-select">
+                        <option [value]="3">3 ROUNDS</option>
+                        <option [value]="5">5 ROUNDS</option>
+                        <option [value]="9">9 ROUNDS</option>
+                        <option [value]="11">11 ROUNDS</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button (click)="onClickStart()" class="start-btn">START TOURNAMENT</button>
+        </div>
+    </div>
+</div>
