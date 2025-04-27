@@ -1,0 +1,25 @@
+<div class="main-container">
+    <div class="game-form">
+        <h1 class="game-title">ROCK PAPER SCISSORS</h1>
+        <div class="form-container">
+            <h2 class="room-title">JOIN GAME ROOM</h2>
+            <div class="form-content">
+                <input [(ngModel)]="name" type="text" placeholder="Your Name" class="input-field">
+            </div>
+            <div class="form-content">
+                <input [(ngModel)]="room" type="text" placeholder="Room Code" class="input-field">
+            </div>
+            <button (click)="onJoinRoom()" class="join-btn">JOIN</button>
+            
+            <div class="players-container" *ngIf="players && players.length > 0">
+                <h3 class="players-title">PLAYERS IN ROOM</h3>
+                <ul class="players-list">
+                    <li *ngFor="let player of players" class="player-item">
+                        <span class="player-icon">👤</span>
+                        {{ player.name }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

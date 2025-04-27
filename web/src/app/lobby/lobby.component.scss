@@ -1,0 +1,119 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    background-image: radial-gradient(circle, #1f1f1f 10%, transparent 10%), 
+                      radial-gradient(circle, #1f1f1f 10%, transparent 10%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+
+.game-form {
+    width: 100%;
+    max-width: 400px;
+}
+
+.game-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #BB86FC;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.form-container {
+    background-color: #1E1E1E;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333333;
+}
+
+.room-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #03DAC6;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.form-content {
+    margin-bottom: 15px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #333333;
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #BB86FC;
+    box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.3);
+}
+
+.input-field::placeholder {
+    color: #AAAAAA;
+}
+
+.join-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #BB86FC;
+    color: #121212;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.join-btn:hover {
+    background-color: #A370DB;
+    box-shadow: 0 3px 7px rgba(187, 134, 252, 0.5);
+    transform: translateY(-2px);
+}
+
+.players-container {
+    margin-top: 30px;
+    border-top: 1px solid #333333;
+    padding-top: 20px;
+}
+
+.players-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #03DAC6;
+}
+
+.players-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.player-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2D2D2D;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.player-icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
