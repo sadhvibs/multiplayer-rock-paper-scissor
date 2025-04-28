@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express")
 const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
@@ -154,23 +154,26 @@ io.on('connection', (socket) => {
     })
 
     //playAgain
-    socket.on('playAgain', ({ room }) => {
+    socket.on('playNextRound', ({ room }) => {
+        console.log('im here')
         const players = playersInRooms[room];
         if (!playAgainVotes[room]) {
             playAgainVotes[room] = new Set();
         }
 
         playAgainVotes[room].add(socket.id);
-
+       
         if (players && playAgainVotes[room].size === 2) {
             if (!currentRounds[room]) currentRounds[room] = 1;
-
+            
             if (currentRounds[room] < tournamentRounds[room]) {
                 currentRounds[room]++;
-
+               
                 // Notifying both players
                 players.forEach(player => {
-                    io.to(player.id).emit('startNextRound', { round: currentRounds[room] });
+                    io.to(player.id).emit('playNextRound', { round: currentRounds[room] });
+                    console.log('sending startNextRound to', player.id);
+
                 });
             }
             else {

@@ -1,1 +1,77 @@
-<p>game works!</p>
+<div class="main-container">
+    <div class="game-container">
+        <h1 class="game-title">ROCK PAPER SCISSORS</h1>
+        
+        <div class="tournament-info">
+            <h2 class="match-title">Tournament Started!</h2>
+            <h3 class="opponent-info">You are playing against <span class="opponent-name">{{opponent | uppercase}}</span></h3>
+            <div class="rounds-info">
+                <p class="current-round" *ngIf="rounds > 0">ROUND {{currentRound}} of {{rounds}}</p>
+            </div>
+        </div>
+        
+        <div class="choices-container">
+            <h3 class="choose-text">MAKE YOUR MOVE</h3>
+            <div class="choices">
+                <button class="choice-btn" [disabled]="buttonDisabled" (click)="choose('rock')">
+                    <img src="assets/images/rock.png" alt="Rock" class="choice-img">
+                    <span class="choice-label">ROCK</span>
+                </button>
+                <button class="choice-btn" [disabled]="buttonDisabled" (click)="choose('paper')">
+                    <img src="assets/images/paper.png" alt="Paper" class="choice-img">
+                    <span class="choice-label">PAPER</span>
+                </button>
+                <button class="choice-btn" [disabled]="buttonDisabled" (click)="choose('scissors')">
+                    <img src="assets/images/scissors.png" alt="Scissors" class="choice-img">
+                    <span class="choice-label">SCISSORS</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="result-container" *ngIf="result">
+            <div class="moves-display" *ngIf="resultVisible">
+                <div class="move-box my-move">
+                    <h4 class="move-title">YOUR MOVE</h4>
+                    <img [src]="'assets/images/' + myMove + '.png'" [alt]="myMove" class="move-img">
+                </div>
+                <div class="vs-badge">VS</div>
+                <div class="move-box opponent-move">
+                    <h4 class="move-title">OPPONENT'S MOVE</h4>
+                    <img [src]="'assets/images/' + opponentMove + '.png'" [alt]="opponentMove" class="move-img">
+                </div>
+            </div>
+            
+            <h2 class="result-text" *ngIf="resultVisible" [ngClass]="{
+                'win': result.includes('Win'),
+                'lose': result.includes('Lose'),
+                'draw': result.includes('Draw')
+            }">{{result}}</h2>
+            
+            <div class="scoreboard">
+                <h3 class="score-title">SCORE</h3>
+                <div class="score-display">
+                    <div class="score-box">
+                        <span class="score-label">YOU</span>
+                        <span class="score-value">{{score.me}}</span>
+                    </div>
+                    <div class="score-divider">:</div>
+                    <div class="score-box">
+                        <span class="score-label">OPPONENT</span>
+                        <span class="score-value">{{score.against}}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="play-again-section">
+                <div class="waiting-message" *ngIf="playAgainClicked && !buttonDisabled && !result">
+                    <p>Waiting for opponent to play again...</p>
+                    <div class="loading-spinner"></div>
+                </div>
+                
+                <button class="play-again-btn"
+                 (click)="onClickPlayAgain()"
+                 >PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+</div>

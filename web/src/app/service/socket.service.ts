@@ -43,6 +43,25 @@ export class SocketService {
   }
 
   emitPlayAgain(room: string) {
-    this.socket.emit('playAgain', { room })
+    this.socket.emit('playNextRound', { room })
   }
+
+  
+  onStartPlayNextRound(callback: (data: any) => void) {
+    this.socket.off('playNextRound');
+    this.socket.on('playNextRound', callback);
+  }
+
+  nextMatch(data: { room: string, playerId: string }) {
+    this.socket.emit('nextMatch', data);
+  }
+
+  onGameOver(callback: (data: any) => void) {
+    this.socket.on('gameOver', callback);
+  }
+
+  disconnect() {
+    this.socket.disconnect();
+  }
+
 }
